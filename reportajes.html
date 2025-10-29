@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reportajes especiales y análisis profundos sobre movilidad, vehículos eléctricos y ciudades inteligentes en América Latina">
+    <meta name="keywords" content="reportajes movilidad, análisis EVs, smart cities, transporte sostenible">
+    <meta property="og:title" content="Reportajes Especiales - MOVILIAX">
+    <meta property="og:description" content="Investigaciones a fondo sobre el futuro de la movilidad en LATAM">
+    
+    <title>Reportajes Especiales - MOVILIAX</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-profundo: #0A0F2C;
+            --cian-electrico: #00E0FF;
+            --gris-metalico: #7A7F8C;
+            --blanco: #FFFFFF;
+            --negro-carbon: #0D0D0D;
+            --violeta-tech: #6B46FF;
+            --verde-success: #00ff88;
+            --naranja-warning: #ffb142;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--azul-profundo);
+            color: var(--blanco);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 44, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 224, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 224, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--blanco);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-x {
+            color: var(--cian-electrico);
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px var(--cian-electrico));
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: var(--cian-electrico);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--cian-electrico);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 60px 80px;
+            max-width: 1600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 224, 255, 0.1);
+            border: 1px solid rgba(0, 224, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--blanco), var(--cian-electrico));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--gris-metalico);
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        /* Search and Filter Section */
+        .search-filter-section {
+            padding: 40px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 50px 16px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: var(--blanco);
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--cian-electrico);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .search-input::placeholder {
+            color: var(--gris-metalico);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: var(--gris-metalico);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: var(--gris-metalico);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--cian-electrico);
+            color: var(--azul-profundo);
+            border-color: var(--cian-electrico);
+            transform: translateY(-2px);
+        }
+
+        /* Featured Article */
+        .featured-section {
+            padding: 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .featured-article {
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.05), rgba(107, 70, 255, 0.05));
+            border: 2px solid rgba(0, 224, 255, 0.2);
+            border-radius: 30px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--violeta-tech), var(--cian-electrico));
+            height: 100%;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            position: relative;
+        }
+
+        .featured-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 15, 44, 0.3);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, var(--cian-electrico), var(--violeta-tech));
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .featured-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-category {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(0, 224, 255, 0.15);
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: fit-content;
+        }
+
+        .featured-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .featured-excerpt {
+            font-size: 18px;
+            color: var(--gris-metalico);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gris-metalico);
+            font-size: 14px;
+        }
+
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cian-electrico), var(--violeta-tech));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            color: var(--azul-profundo);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .read-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        /* Articles Grid */
+        .articles-section {
+            padding: 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--gris-metalico);
+        }
+
+        .articles-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .articles-main {
+            flex: 2;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .article-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 224, 255, 0.2);
+            border-color: var(--cian-electrico);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--violeta-tech), var(--cian-electrico));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+        }
+
+        .article-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 15, 44, 0.3);
+        }
+
+        .article-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 14px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .article-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.3;
+            color: var(--blanco);
+        }
+
+        .article-excerpt {
+            color: var(--gris-metalico);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--gris-metalico);
+        }
+
+        .article-date {
+            font-size: 12px;
+            color: var(--gris-metalico);
+        }
+
+        .article-read-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: var(--gris-metalico);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sidebar-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .trending-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .trending-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .trending-item:hover {
+            padding-left: 10px;
+        }
+
+        .trending-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--cian-electrico), var(--violeta-tech));
+            color: var(--azul-profundo);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .trending-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--blanco);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .trending-meta {
+            font-size: 12px;
+            color: var(--gris-metalico);
+        }
+
+        .category-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-item:hover {
+            background: rgba(0, 224, 255, 0.1);
+            border-color: var(--cian-electrico);
+        }
+
+        .category-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .category-count {
+            font-size: 12px;
+            color: var(--gris-metalico);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+
+        .newsletter-widget {
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.1), rgba(107, 70, 255, 0.1));
+            border: 2px solid rgba(0, 224, 255, 0.3);
+            text-align: center;
+        }
+
+        .newsletter-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-widget-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-widget-text {
+            font-size: 14px;
+            color: var(--gris-metalico);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .newsletter-widget-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            color: var(--azul-profundo);
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-widget-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+        }
+
+        /* Load More Button */
+        .load-more-container {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .load-more-btn {
+            padding: 16px 40px;
+            background: transparent;
+            border: 2px solid var(--cian-electrico);
+            color: var(--cian-electrico);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            background: rgba(0, 224, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 60px 30px;
+            border-top: 1px solid rgba(0, 224, 255, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--blanco);
+        }
+
+        .footer-description {
+            color: var(--gris-metalico);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--cian-electrico);
+            border-color: var(--cian-electrico);
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--blanco);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gris-metalico);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--cian-electrico);
+        }
+
+        .footer-bottom {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--gris-metalico);
+            font-size: 14px;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--azul-profundo);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .articles-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                min-height: 350px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 140px 30px 60px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .search-filter-section {
+                padding: 30px;
+                flex-direction: column;
+            }
+
+            .search-box {
+                max-width: 100%;
+            }
+
+            .featured-section {
+                padding: 40px 30px;
+            }
+
+            .featured-content {
+                padding: 40px 30px;
+            }
+
+            .featured-title {
+                font-size: 28px;
+            }
+
+            .articles-section {
+                padding: 40px 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                padding: 40px 30px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 224, 255, 0.95);
+            color: var(--azul-profundo);
+            padding: 18px 32px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.3);
+            z-index: 10000;
+            transition: transform 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                MOVILIA<span class="logo-x">X</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/contenido.html">Contenido</a></li>
+                <li><a href="/moviliax-talks.html">Podcast</a></li>
+                <li><a href="/#newsletter">Newsletter</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#newsletter" class="nav-cta">Suscríbete</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="hero-tag">
+            📰 Investigación y Análisis Profundo
+        </div>
+        <h1 class="hero-title">Reportajes Especiales</h1>
+        <p class="hero-subtitle">
+            Investigaciones a fondo, análisis exhaustivos y reportajes exclusivos sobre 
+            las tendencias que están moldeando el futuro de la movilidad en América Latina.
+        </p>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-filter-section fade-in">
+        <div class="search-box">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput"
+                placeholder="Buscar artículos, temas, autores..."
+            >
+            <span class="search-icon">🔍</span>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="evs">EVs</button>
+            <button class="filter-btn" data-filter="smart-cities">Smart Cities</button>
+            <button class="filter-btn" data-filter="autonomos">Autónomos</button>
+            <button class="filter-btn" data-filter="logistica">Logística</button>
+            <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
+            <button class="filter-btn" data-filter="sostenibilidad">Sostenibilidad</button>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-section fade-in">
+        <div class="featured-article">
+            <div class="featured-image">
+                🚗
+                <div class="featured-badge">⭐ Destacado</div>
+            </div>
+            <div class="featured-content">
+                <span class="featured-category">EVs</span>
+                <h2 class="featured-title">
+                    México Rumbo a la Electrificación: El Mapa Completo del Mercado EV
+                </h2>
+                <p class="featured-excerpt">
+                    Un análisis exhaustivo de cómo México se está posicionando como el hub de 
+                    vehículos eléctricos en América Latina. Desde las inversiones de Tesla hasta 
+                    los desafíos de infraestructura, exploramos el panorama completo de la 
+                    revolución eléctrica mexicana.
+                </p>
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <div class="author-avatar">👤</div>
+                        <span>Carlos Ramírez</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>28 Oct 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️</span>
+                        <span>15 min lectura</span>
+                    </div>
+                </div>
+                <a href="#" class="read-btn">
+                    Leer Reportaje Completo
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles-section fade-in">
+        <div class="articles-container">
+            <!-- Main Articles Grid -->
+            <div class="articles-main">
+                <div class="section-header">
+                    <h2 class="section-title">Últimos Reportajes</h2>
+                    <p class="section-description">
+                        Análisis profundos y reportajes exclusivos sobre el futuro de la movilidad
+                    </p>
+                </div>
+
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Article 1 -->
+                    <article class="article-card" data-category="logistica">
+                        <div class="article-image">
+                            📦
+                            <span class="article-category">Logística</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Nearshoring: Cómo México Se Convirtió en el Centro Logístico de América
+                            </h3>
+                            <p class="article-excerpt">
+                                El fenómeno del nearshoring está transformando radicalmente la logística 
+                                mexicana. Analizamos las oportunidades, inversiones y desafíos de esta 
+                                nueva era del comercio.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>María Torres</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>12 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card" data-category="smart-cities">
+                        <div class="article-image">
+                            🏙️
+                            <span class="article-category">Smart Cities</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Medellín: El Caso de Éxito de las Ciudades Inteligentes en LATAM
+                            </h3>
+                            <p class="article-excerpt">
+                                Cómo Medellín pasó de ser una de las ciudades más peligrosas a convertirse 
+                                en el referente de innovación urbana y movilidad sostenible en la región.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Diego Mendoza</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>18 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card" data-category="autonomos">
+                        <div class="article-image">
+                            🤖
+                            <span class="article-category">Autónomos</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Conducción Autónoma: ¿Está América Latina Lista Para La Revolución?
+                            </h3>
+                            <p class="article-excerpt">
+                                Exploramos los desafíos técnicos, regulatorios y culturales que enfrentan 
+                                los vehículos autónomos en ciudades latinoamericanas.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Ana Rojas</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>20 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="article-card" data-category="infraestructura">
+                        <div class="article-image">
+                            ⚡
+                            <span class="article-category">Infraestructura</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                La Red de Carga: El Cuello de Botella de la Adopción de EVs
+                            </h3>
+                            <p class="article-excerpt">
+                                Un análisis profundo de la infraestructura de carga en México, los planes 
+                                de inversión y las innovaciones que podrían acelerar la transición eléctrica.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Roberto Silva</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>16 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="article-card" data-category="sostenibilidad">
+                        <div class="article-image">
+                            🌱
+                            <span class="article-category">Sostenibilidad</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Movilidad Verde: El Impacto Ambiental Real de los EVs en LATAM
+                            </h3>
+                            <p class="article-excerpt">
+                                ¿Son realmente más sustentables los vehículos eléctricos en América Latina? 
+                                Analizamos el ciclo de vida completo y las consideraciones energéticas.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Laura Gómez</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>14 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="article-card" data-category="evs">
+                        <div class="article-image">
+                            🔋
+                            <span class="article-category">EVs</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Tesla vs BYD: La Guerra por el Mercado Latinoamericano
+                            </h3>
+                            <p class="article-excerpt">
+                                Comparamos las estrategias, precios y tecnología de los dos gigantes del 
+                                vehículo eléctrico en su batalla por dominar América Latina.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Patricia Ruiz</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>22 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 7 -->
+                    <article class="article-card" data-category="smart-cities">
+                        <div class="article-image">
+                            🚴
+                            <span class="article-category">Smart Cities</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Micromovilidad Urbana: El Auge de Bicis y Scooters Eléctricos
+                            </h3>
+                            <p class="article-excerpt">
+                                Cómo la micromovilidad está transformando las ciudades latinoamericanas, 
+                                sus beneficios y los retos regulatorios que enfrenta.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Andrés Morales</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 8 -->
+                    <article class="article-card" data-category="logistica">
+                        <div class="article-image">
+                            🚚
+                            <span class="article-category">Logística</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Last Mile: La Innovación en Entrega de Última Milla
+                            </h3>
+                            <p class="article-excerpt">
+                                Las startups y tecnologías que están revolucionando la entrega de última 
+                                milla en el e-commerce latinoamericano.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Fernando Castro</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>13 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 9 -->
+                    <article class="article-card" data-category="infraestructura">
+                        <div class="article-image">
+                            🛣️
+                            <span class="article-category">Infraestructura</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">
+                                Carreteras Inteligentes: El Futuro de la Infraestructura Vial
+                            </h3>
+                            <p class="article-excerpt">
+                                Exploramos las tecnologías que están transformando nuestras carreteras en 
+                                sistemas inteligentes capaces de comunicarse con vehículos.
+                            </p>
+                            <div class="article-footer">
+                                <div class="article-author">
+                                    <div class="author-avatar">👤</div>
+                                    <span>Isabel Martínez</span>
+                                </div>
+                                <div class="article-read-time">
+                                    <span>⏱️</span>
+                                    <span>17 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        Cargar Más Artículos
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Trending -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">
+                        🔥 Trending
+                    </h3>
+                    <div class="trending-item">
+                        <div class="trending-number">1</div>
+                        <div class="trending-title">
+                            Tesla Anuncia Nueva Gigafactory en Monterrey
+                        </div>
+                        <div class="trending-meta">
+                            12.5K lecturas • 2 días
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-number">2</div>
+                        <div class="trending-title">
+                            BYD Supera a Tesla en Ventas Globales de EVs
+                        </div>
+                        <div class="trending-meta">
+                            8.3K lecturas • 3 días
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-number">3</div>
+                        <div class="trending-title">
+                            Ciudad de México Lanza Plan de Movilidad 2030
+                        </div>
+                        <div class="trending-meta">
+                            6.7K lecturas • 5 días
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-number">4</div>
+                        <div class="trending-title">
+                            Brasil Invierte $2B en Red de Carga Nacional
+                        </div>
+                        <div class="trending-meta">
+                            5.2K lecturas • 1 semana
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-number">5</div>
+                        <div class="trending-title">
+                            Waymo Comienza Pruebas en São Paulo
+                        </div>
+                        <div class="trending-meta">
+                            4.8K lecturas • 1 semana
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">
+                        📑 Categorías
+                    </h3>
+                    <div class="category-list">
+                        <div class="category-item">
+                            <span class="category-name">⚡ Vehículos Eléctricos</span>
+                            <span class="category-count">42</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-name">🏙️ Ciudades Inteligentes</span>
+                            <span class="category-count">38</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-name">🚗 Autónomos</span>
+                            <span class="category-count">27</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-name">📦 Logística</span>
+                            <span class="category-count">34</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-name">🛣️ Infraestructura</span>
+                            <span class="category-count">29</span>
+                        </div>
+                        <div class="category-item">
+                            <span class="category-name">🌱 Sostenibilidad</span>
+                            <span class="category-count">31</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div class="sidebar-section newsletter-widget">
+                    <div class="newsletter-icon">📧</div>
+                    <h3 class="newsletter-widget-title">RADARX Weekly</h3>
+                    <p class="newsletter-widget-text">
+                        Recibe cada domingo los mejores análisis y reportajes en tu inbox
+                    </p>
+                    <button class="newsletter-widget-btn">
+                        Suscribirme Gratis
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    MOVILIA<span class="logo-x">X</span>
+                </div>
+                <p class="footer-description">
+                    La plataforma líder de contenido sobre movilidad, vehículos eléctricos 
+                    y ciudades inteligentes en América Latina.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                    <a href="#" class="social-icon" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contenido</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/reportajes.html">Reportajes</a></li>
+                    <li><a href="/moviliax-talks.html">Podcast</a></li>
+                    <li><a href="/#newsletter">Newsletter</a></li>
+                    <li><a href="#">Datos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Categorías</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Vehículos Eléctricos</a></li>
+                    <li><a href="#">Smart Cities</a></li>
+                    <li><a href="#">Autónomos</a></li>
+                    <li><a href="#">Logística</a></li>
+                    <li><a href="#">Infraestructura</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Empresa</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MOVILIAX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to top
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const articleCards = document.querySelectorAll('.article-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                articleCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            articleCards.forEach(card => {
+                const title = card.querySelector('.article-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Load More
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        
+        loadMoreBtn.addEventListener('click', () => {
+            showToast('Cargando más artículos... 📰');
+            // Simulate loading
+            setTimeout(() => {
+                showToast('¡Nuevos artículos cargados! 🎉');
+            }, 1000);
+        });
+
+        // Newsletter widget
+        const newsletterBtn = document.querySelector('.newsletter-widget-btn');
+        
+        newsletterBtn.addEventListener('click', () => {
+            showToast('¡Gracias por suscribirte a RADARX! 📧');
+        });
+
+        // Toast notification
+        const toast = document.getElementById('toast');
+        
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Fade in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+
+        // Console Easter Egg
+        console.log('%c📰 MOVILIAX REPORTAJES', 'font-size: 40px; color: #00E0FF; font-weight: bold;');
+        console.log('%c¿Tienes una historia que contar?', 'font-size: 16px; color: #7A7F8C;');
+        console.log('%cEnvía tu propuesta a: reportajes@moviliax.com', 'font-size: 14px; color: #00E0FF;');
+    </script>
+</body>
+</html>
