@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVILIAX Connect | Red Profesional de Movilidad en LATAM</title>
+    <meta name="description" content="Únete a la red profesional más activa de movilidad en América Latina. Conecta con +5,000 expertos, participa en foros, eventos y grupos especializados.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0A0F2C;
+            --primary-cyan: #00E0FF;
+            --secondary-purple: #6C63FF;
+            --accent-orange: #FF6B35;
+            --text-light: #E8E8E8;
+            --text-gray: #A0AEC0;
+            --card-bg: #1A1F3A;
+            --gradient-1: linear-gradient(135deg, #0A0F2C 0%, #1A1F3A 100%);
+            --gradient-2: linear-gradient(135deg, #00E0FF 0%, #6C63FF 100%);
+            --gradient-3: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 15, 44, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .nav-menu a.active {
+            color: var(--primary-cyan);
+        }
+
+        .btn-join {
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-2);
+            border: none;
+            border-radius: 8px;
+            color: var(--primary-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 224, 255, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 2rem 100px;
+            background: var(--gradient-1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 224, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(108, 99, 255, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 224, 255, 0.1);
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--primary-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: var(--gradient-2);
+            border: none;
+            border-radius: 10px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid var(--primary-cyan);
+            border-radius: 10px;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 224, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(0, 224, 255, 0.1);
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Forums Grid */
+        .forums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .forum-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .forum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
+            border-color: var(--primary-cyan);
+        }
+
+        .forum-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 224, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+        }
+
+        .forum-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .forum-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .forum-stats {
+            display: flex;
+            gap: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 224, 255, 0.1);
+        }
+
+        .forum-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .forum-stat i {
+            color: var(--primary-cyan);
+        }
+
+        /* Groups Section */
+        .groups-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .group-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .group-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-cyan);
+        }
+
+        .group-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .group-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .group-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .group-members {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .group-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 224, 255, 0.1);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--primary-cyan);
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Events Timeline */
+        .events-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .events-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-cyan) 0%, rgba(0, 224, 255, 0.1) 100%);
+        }
+
+        .event-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .event-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
+        }
+
+        .event-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--primary-dark), 0 0 0 6px var(--primary-cyan);
+        }
+
+        .event-date {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(0, 224, 255, 0.1);
+            border-radius: 6px;
+            color: var(--primary-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .event-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 224, 255, 0.1);
+        }
+
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .event-meta-item i {
+            color: var(--primary-cyan);
+        }
+
+        /* Directory */
+        .directory-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .directory-filters {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .filter-option:hover {
+            color: var(--primary-cyan);
+        }
+
+        .filter-option input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-option input[type="checkbox"]:checked {
+            background: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+        }
+
+        .directory-results {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .search-bar {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: var(--primary-dark);
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 224, 255, 0.1);
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            display: flex;
+            gap: 2rem;
+            transition: all 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.2);
+            border-color: var(--primary-cyan);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .profile-content {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: var(--text-gray);
+            margin-bottom: 0.75rem;
+        }
+
+        .profile-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-location i {
+            color: var(--primary-cyan);
+        }
+
+        .profile-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .profile-tag {
+            padding: 0.3rem 0.75rem;
+            background: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--secondary-purple);
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-connect {
+            background: var(--gradient-2);
+            color: var(--primary-dark);
+        }
+
+        .btn-message {
+            background: transparent;
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+        }
+
+        .btn-small:hover {
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--card-bg);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 224, 255, 0.1);
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0, 224, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 224, 255, 0.1);
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .directory-container {
+                grid-template-columns: 1fr;
+            }
+
+            .directory-filters {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .forums-grid,
+            .groups-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">MOVILIAX</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contenido.html">Contenido</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="moviliax-connect.html" class="active">Comunidad</a></li>
+                <li><a href="#">Newsletter</a></li>
+                <li><button class="btn-join">Unirse Gratis</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <span class="hero-badge">
+                <i class="fas fa-users"></i> MOVILIAX Connect
+            </span>
+            <h1>La Red Profesional de Movilidad en LATAM</h1>
+            <p class="hero-description">
+                Conecta con más de 5,000 expertos, participa en foros especializados, 
+                asiste a eventos exclusivos y colabora en proyectos que están transformando 
+                la movilidad en América Latina.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Miembros Activos</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">250+</div>
+                    <div class="stat-label">Empresas Conectadas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Eventos Mensuales</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Países Representados</div>
+                </div>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#" class="btn-primary">
+                    <i class="fas fa-rocket"></i> Unirme Ahora
+                </a>
+                <a href="#" class="btn-secondary">
+                    <i class="fas fa-play-circle"></i> Ver Cómo Funciona
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        
+        <!-- Forums Section -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-comments"></i> Foros
+                </span>
+                <h2 class="section-title">Discusiones que Importan</h2>
+                <p class="section-description">
+                    Participa en conversaciones sobre los temas más relevantes del ecosistema 
+                    de movilidad en América Latina.
+                </p>
+            </div>
+
+            <div class="forums-grid">
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3 class="forum-title">Vehículos Eléctricos</h3>
+                    <p class="forum-description">
+                        Discusiones sobre modelos, infraestructura de carga, incentivos fiscales 
+                        y el futuro de la movilidad eléctrica en LATAM.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>1,245 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>2,340 miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3 class="forum-title">Smart Cities & Movilidad Urbana</h3>
+                    <p class="forum-description">
+                        Transporte público, micro-movilidad, gestión inteligente de tráfico 
+                        y casos de éxito en ciudades latinoamericanas.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>890 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>1,876 miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="forum-title">Logística & Last Mile</h3>
+                    <p class="forum-description">
+                        E-commerce, flotas eléctricas, optimización de rutas, nearshoring 
+                        y el futuro de la logística en la región.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>765 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>1,543 miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="forum-title">Vehículos Autónomos</h3>
+                    <p class="forum-description">
+                        Tecnología, regulación, pruebas piloto, ética y el impacto de los 
+                        vehículos autónomos en América Latina.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>432 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>987 miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="forum-title">Negocios & Emprendimiento</h3>
+                    <p class="forum-description">
+                        Startups de movilidad, financiamiento, modelos de negocio, partnerships 
+                        y oportunidades en el sector.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>623 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>1,234 miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forum-card">
+                    <div class="forum-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="forum-title">Foros por País</h3>
+                    <p class="forum-description">
+                        Discusiones específicas sobre México, Brasil, Colombia, Argentina, Chile 
+                        y el resto de América Latina.
+                    </p>
+                    <div class="forum-stats">
+                        <div class="forum-stat">
+                            <i class="fas fa-comments"></i>
+                            <span>1,890 temas</span>
+                        </div>
+                        <div class="forum-stat">
+                            <i class="fas fa-users"></i>
+                            <span>3,456 miembros</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Groups Section -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-user-friends"></i> Grupos
+                </span>
+                <h2 class="section-title">Comunidades Especializadas</h2>
+                <p class="section-description">
+                    Únete a grupos por rol, industria o interés específico. Colabora con profesionales 
+                    que comparten tus mismos desafíos y objetivos.
+                </p>
+            </div>
+
+            <div class="groups-container">
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">CL</div>
+                        <div class="group-info">
+                            <h3>C-Level en Movilidad</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 234 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Ejecutivos</span>
+                    <span class="group-tag">Privado</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">FE</div>
+                        <div class="group-info">
+                            <h3>Founders & Emprendedores</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 567 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Startups</span>
+                    <span class="group-tag">Público</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">IE</div>
+                        <div class="group-info">
+                            <h3>Ingenieros de Infraestructura</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 423 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Técnico</span>
+                    <span class="group-tag">Público</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">AM</div>
+                        <div class="group-info">
+                            <h3>Analistas de Mercado</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 345 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Datos</span>
+                    <span class="group-tag">Público</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">PP</div>
+                        <div class="group-info">
+                            <h3>Políticas Públicas</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 189 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Gobierno</span>
+                    <span class="group-tag">Verificado</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">BA</div>
+                        <div class="group-info">
+                            <h3>Baterías & Almacenamiento</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 298 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Tecnología</span>
+                    <span class="group-tag">Público</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">MM</div>
+                        <div class="group-info">
+                            <h3>Micro-movilidad</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 456 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">Urbano</span>
+                    <span class="group-tag">Público</span>
+                </div>
+
+                <div class="group-card">
+                    <div class="group-header">
+                        <div class="group-avatar">SC</div>
+                        <div class="group-info">
+                            <h3>Sostenibilidad Corporativa</h3>
+                            <p class="group-members">
+                                <i class="fas fa-users"></i> 512 miembros
+                            </p>
+                        </div>
+                    </div>
+                    <span class="group-tag">ESG</span>
+                    <span class="group-tag">Público</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-calendar-alt"></i> Eventos
+                </span>
+                <h2 class="section-title">Calendario de Eventos</h2>
+                <p class="section-description">
+                    Webinars, meetups, conferencias y workshops diseñados para conectar, aprender 
+                    y colaborar en el ecosistema de movilidad.
+                </p>
+            </div>
+
+            <div class="events-timeline">
+                <div class="event-item">
+                    <span class="event-date">
+                        <i class="fas fa-calendar"></i> 15 de Noviembre, 2025
+                    </span>
+                    <h3 class="event-title">MOVILIAX Summit 2025</h3>
+                    <p class="event-description">
+                        Conferencia virtual de día completo con keynotes, paneles y networking. 
+                        Más de 20 speakers internacionales compartiendo insights sobre el futuro 
+                        de la movilidad en LATAM.
+                    </p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <i class="fas fa-video"></i>
+                            <span>Virtual</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9:00 AM - 6:00 PM (MX)</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>1,234 registrados</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Gratis para miembros</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <span class="event-date">
+                        <i class="fas fa-calendar"></i> 20 de Noviembre, 2025
+                    </span>
+                    <h3 class="event-title">Coffee Talk: Nearshoring y Logística en México</h3>
+                    <p class="event-description">
+                        Conversación informal de 30 minutos sobre el impacto del nearshoring 
+                        en la infraestructura logística mexicana. Con invitados de Amazon y Mercado Libre.
+                    </p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <i class="fas fa-video"></i>
+                            <span>Virtual</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9:00 AM (MX)</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>456 registrados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <span class="event-date">
+                        <i class="fas fa-calendar"></i> 22 de Noviembre, 2025
+                    </span>
+                    <h3 class="event-title">Pitch Night: Startups de Movilidad</h3>
+                    <p class="event-description">
+                        5 startups latinoamericanas presentan sus proyectos ante inversionistas 
+                        y expertos del sector. Sesión de Q&A y networking posterior.
+                    </p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <i class="fas fa-video"></i>
+                            <span>Virtual</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5:00 PM (MX)</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>289 registrados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <span class="event-date">
+                        <i class="fas fa-calendar"></i> 28 de Noviembre, 2025
+                    </span>
+                    <h3 class="event-title">Meetup CDMX: EVs y Infraestructura de Carga</h3>
+                    <p class="event-description">
+                        Evento presencial en Ciudad de México. Networking, panel de discusión 
+                        y visita a estación de carga ultrarrápida de Tesla.
+                    </p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ciudad de México</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>6:00 PM - 9:00 PM</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>78/100 cupos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <span class="event-date">
+                        <i class="fas fa-calendar"></i> 5 de Diciembre, 2025
+                    </span>
+                    <h3 class="event-title">Roundtable: Regulación de Vehículos Autónomos</h3>
+                    <p class="event-description">
+                        Mesa redonda privada (15 personas) con reguladores, abogados y expertos 
+                        en movilidad para discutir el marco legal de vehículos autónomos en LATAM.
+                    </p>
+                    <div class="event-meta">
+                        <div class="event-meta-item">
+                            <i class="fas fa-video"></i>
+                            <span>Virtual</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>4:00 PM (MX)</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>15/15 cupos</span>
+                        </div>
+                        <div class="event-meta-item">
+                            <i class="fas fa-lock"></i>
+                            <span>Privado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Directory Section -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-label">
+                    <i class="fas fa-address-book"></i> Directorio
+                </span>
+                <h2 class="section-title">Encuentra Profesionales y Empresas</h2>
+                <p class="section-description">
+                    Directorio completo de miembros, empresas, startups y expertos del ecosistema 
+                    de movilidad en América Latina.
+                </p>
+            </div>
+
+            <div class="directory-container">
+                <div class="directory-filters">
+                    <div class="filter-section">
+                        <h4 class="filter-title">Tipo de Perfil</h4>
+                        <label class="filter-option">
+                            <input type="checkbox" checked>
+                            <span>Profesionales</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Empresas</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Startups</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Inversionistas</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Expertise</h4>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Vehículos Eléctricos</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Smart Cities</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Logística</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Infraestructura</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>Políticas Públicas</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">País</h4>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>🇲🇽 México</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>🇧🇷 Brasil</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>🇨🇴 Colombia</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>🇨🇱 Chile</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox">
+                            <span>🇦🇷 Argentina</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="directory-results">
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Buscar por nombre, empresa o expertise...">
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">CM</div>
+                        <div class="profile-content">
+                            <h3 class="profile-name">Carlos Mendoza</h3>
+                            <p class="profile-title">Director de Infraestructura • Tesla LATAM</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ciudad de México, México</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="profile-tag">Vehículos Eléctricos</span>
+                                <span class="profile-tag">Infraestructura</span>
+                                <span class="profile-tag">Carga Rápida</span>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-small btn-connect">
+                                    <i class="fas fa-user-plus"></i> Conectar
+                                </button>
+                                <button class="btn-small btn-message">
+                                    <i class="fas fa-envelope"></i> Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">AS</div>
+                        <div class="profile-content">
+                            <h3 class="profile-name">Ana Silva</h3>
+                            <p class="profile-title">CEO & Founder • Movilify (Startup de Micro-movilidad)</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>São Paulo, Brasil</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="profile-tag">Emprendimiento</span>
+                                <span class="profile-tag">Micro-movilidad</span>
+                                <span class="profile-tag">Smart Cities</span>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-small btn-connect">
+                                    <i class="fas fa-user-plus"></i> Conectar
+                                </button>
+                                <button class="btn-small btn-message">
+                                    <i class="fas fa-envelope"></i> Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">JR</div>
+                        <div class="profile-content">
+                            <h3 class="profile-name">Jorge Ramírez</h3>
+                            <p class="profile-title">Secretario de Movilidad • Gobierno de Medellín</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Medellín, Colombia</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="profile-tag">Políticas Públicas</span>
+                                <span class="profile-tag">Transporte Público</span>
+                                <span class="profile-tag">Smart Cities</span>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-small btn-connect">
+                                    <i class="fas fa-user-plus"></i> Conectar
+                                </button>
+                                <button class="btn-small btn-message">
+                                    <i class="fas fa-envelope"></i> Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">LT</div>
+                        <div class="profile-content">
+                            <h3 class="profile-name">Laura Torres</h3>
+                            <p class="profile-title">Directora de Logística • Mercado Libre</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Buenos Aires, Argentina</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="profile-tag">Logística</span>
+                                <span class="profile-tag">Last Mile</span>
+                                <span class="profile-tag">Flotas Eléctricas</span>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-small btn-connect">
+                                    <i class="fas fa-user-plus"></i> Conectar
+                                </button>
+                                <button class="btn-small btn-message">
+                                    <i class="fas fa-envelope"></i> Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-avatar">MP</div>
+                        <div class="profile-content">
+                            <h3 class="profile-name">Miguel Pérez</h3>
+                            <p class="profile-title">Ingeniero Senior de Baterías • BYD LATAM</p>
+                            <div class="profile-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Santiago, Chile</span>
+                            </div>
+                            <div class="profile-tags">
+                                <span class="profile-tag">Baterías</span>
+                                <span class="profile-tag">Almacenamiento</span>
+                                <span class="profile-tag">I+D</span>
+                            </div>
+                            <div class="profile-actions">
+                                <button class="btn-small btn-connect">
+                                    <i class="fas fa-user-plus"></i> Conectar
+                                </button>
+                                <button class="btn-small btn-message">
+                                    <i class="fas fa-envelope"></i> Mensaje
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>¿Listo para Unirte a la Red?</h2>
+            <p>
+                Más de 5,000 profesionales ya están conectados. Participa en foros, 
+                eventos exclusivos y colabora en proyectos que están transformando la movilidad en LATAM.
+            </p>
+            <a href="#" class="btn-primary" style="display: inline-block;">
+                <i class="fas fa-rocket"></i> Crear Mi Cuenta Gratis
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>MOVILIAX</h3>
+                <p>La plataforma líder de contenido, datos y comunidad sobre movilidad en América Latina.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Plataforma</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Contenido</a></li>
+                    <li><a href="#">Podcast</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Foros</a></li>
+                    <li><a href="#">Grupos</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Directorio</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Código de Conducta</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MOVILIAX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.forum-card, .group-card, .event-item, .profile-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const profileCards = document.querySelectorAll('.profile-card');
+
+            profileCards.forEach(card => {
+                const name = card.querySelector('.profile-name').textContent.toLowerCase();
+                const title = card.querySelector('.profile-title').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.profile-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+
+                if (name.includes(searchTerm) || title.includes(searchTerm) || tags.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Filter functionality
+        const filterCheckboxes = document.querySelectorAll('.filter-option input[type="checkbox"]');
+        filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                console.log('Filter applied:', this.parentElement.textContent.trim());
+                // Here you would implement the actual filtering logic
+            });
+        });
+
+        // Connect button functionality
+        document.querySelectorAll('.btn-connect').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.innerHTML = '<i class="fas fa-check"></i> Conectado';
+                this.style.background = 'rgba(16, 185, 129, 0.2)';
+                this.style.color = '#10B981';
+                this.style.border = '1px solid #10B981';
+            });
+        });
+
+        // Toast notification for actions
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background: linear-gradient(135deg, #00E0FF 0%, #6C63FF 100%);
+                color: #0A0F2C;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                font-weight: 600;
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => document.body.removeChild(toast), 300);
+            }, 3000);
+        }
+
+        // Message button functionality
+        document.querySelectorAll('.btn-message').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const name = this.closest('.profile-card').querySelector('.profile-name').textContent;
+                showToast(`Iniciando conversación con ${name}...`);
+            });
+        });
+
+        // Add animations CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(400px); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(400px); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
