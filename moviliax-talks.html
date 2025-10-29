@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MOVILIAX Talks - Conversaciones con los visionarios que están construyendo el futuro de la movilidad en América Latina">
+    <meta name="keywords" content="podcast movilidad, EVs, ciudades inteligentes, transporte sostenible, América Latina">
+    <meta property="og:title" content="MOVILIAX Talks - El Podcast de Movilidad en LATAM">
+    <meta property="og:description" content="Conversaciones profundas con CEOs, innovadores y expertos sobre el futuro de la movilidad">
+    <meta property="og:type" content="website">
+    
+    <title>MOVILIAX Talks - El Podcast de Movilidad en América Latina</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-profundo: #0A0F2C;
+            --cian-electrico: #00E0FF;
+            --gris-metalico: #7A7F8C;
+            --blanco: #FFFFFF;
+            --negro-carbon: #0D0D0D;
+            --violeta-tech: #6B46FF;
+            --verde-success: #00ff88;
+            --naranja-warning: #ffb142;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--azul-profundo);
+            color: var(--blanco);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 44, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 224, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 224, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--blanco);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .logo-x {
+            color: var(--cian-electrico);
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px var(--cian-electrico));
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: var(--cian-electrico);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--cian-electrico);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 60px 120px;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 224, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 224, 255, 0.1);
+            border: 1px solid rgba(0, 224, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--blanco), var(--cian-electrico));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: var(--gris-metalico);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--cian-electrico);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--gris-metalico);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            color: var(--azul-profundo);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--cian-electrico);
+            border: 2px solid var(--cian-electrico);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(0, 224, 255, 0.1);
+        }
+
+        /* Platforms Section */
+        .platforms {
+            padding: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .platforms-title {
+            font-size: 18px;
+            color: var(--gris-metalico);
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .platforms-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .platform-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--blanco);
+            font-weight: 600;
+        }
+
+        .platform-item:hover {
+            background: rgba(0, 224, 255, 0.1);
+            border-color: var(--cian-electrico);
+            transform: translateY(-3px);
+        }
+
+        .platform-icon {
+            font-size: 32px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 40px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .filter-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--blanco);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: var(--gris-metalico);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--cian-electrico);
+            color: var(--azul-profundo);
+            border-color: var(--cian-electrico);
+        }
+
+        /* Episodes Grid */
+        .episodes-section {
+            padding: 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .episode-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 224, 255, 0.2);
+            border-color: var(--cian-electrico);
+        }
+
+        .episode-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--violeta-tech), var(--cian-electrico));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .episode-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 15, 44, 0.3);
+        }
+
+        .episode-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            z-index: 2;
+        }
+
+        .episode-duration {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--blanco);
+            z-index: 2;
+        }
+
+        .episode-content {
+            padding: 30px;
+        }
+
+        .episode-category {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 224, 255, 0.15);
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--cian-electrico);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .episode-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--blanco);
+            line-height: 1.3;
+        }
+
+        .episode-guest {
+            color: var(--gris-metalico);
+            font-size: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .episode-description {
+            color: var(--gris-metalico);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .episode-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .episode-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .episode-btn-primary {
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            color: var(--azul-profundo);
+        }
+
+        .episode-btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+        }
+
+        .episode-btn-secondary {
+            background: transparent;
+            color: var(--cian-electrico);
+            border: 1px solid var(--cian-electrico);
+        }
+
+        .episode-btn-secondary:hover {
+            background: rgba(0, 224, 255, 0.1);
+        }
+
+        /* Featured Episode */
+        .featured-episode {
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.1), rgba(107, 70, 255, 0.1));
+            border: 2px solid rgba(0, 224, 255, 0.3);
+            border-radius: 30px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--cian-electrico), var(--violeta-tech));
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .featured-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .featured-guest {
+            font-size: 20px;
+            color: var(--cian-electrico);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .featured-description {
+            font-size: 16px;
+            color: var(--gris-metalico);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gris-metalico);
+            font-size: 14px;
+        }
+
+        .featured-player {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--azul-profundo);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.5);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 80px auto;
+            background: linear-gradient(135deg, rgba(0, 224, 255, 0.05), rgba(107, 70, 255, 0.05));
+            border-radius: 30px;
+            border: 2px solid rgba(0, 224, 255, 0.2);
+            text-align: center;
+        }
+
+        .newsletter-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-title {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-description {
+            font-size: 18px;
+            color: var(--gris-metalico);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 18px 28px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--blanco);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--cian-electrico);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .newsletter-input::placeholder {
+            color: var(--gris-metalico);
+        }
+
+        .newsletter-button {
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            color: var(--azul-profundo);
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 60px 30px;
+            border-top: 1px solid rgba(0, 224, 255, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--blanco);
+        }
+
+        .footer-description {
+            color: var(--gris-metalico);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--cian-electrico);
+            border-color: var(--cian-electrico);
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--blanco);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gris-metalico);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--cian-electrico);
+        }
+
+        .footer-bottom {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--gris-metalico);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 56px;
+            }
+
+            .featured-episode {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 140px 30px 80px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .platforms {
+                padding: 40px 30px;
+            }
+
+            .platforms-grid {
+                gap: 20px;
+            }
+
+            .filter-section {
+                padding: 30px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .episodes-section {
+                padding: 40px 30px;
+            }
+
+            .episodes-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .featured-episode {
+                padding: 40px 30px;
+            }
+
+            .featured-title {
+                font-size: 32px;
+            }
+
+            .newsletter-section {
+                padding: 60px 30px;
+            }
+
+            .newsletter-title {
+                font-size: 32px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            footer {
+                padding: 40px 30px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--cian-electrico), #0099cc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--azul-profundo);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.4);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 224, 255, 0.95);
+            color: var(--azul-profundo);
+            padding: 18px 32px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 15px 40px rgba(0, 224, 255, 0.3);
+            z-index: 10000;
+            transition: transform 0.4s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                MOVILIA<span class="logo-x">X</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/contenido.html">Contenido</a></li>
+                <li><a href="/moviliax-talks.html">Podcast</a></li>
+                <li><a href="/#newsletter">Newsletter</a></li>
+                <li><a href="/#comunidad">Comunidad</a></li>
+                <li><a href="/#newsletter" class="nav-cta">Suscríbete</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <div class="hero-tag">
+                🎙️ El Podcast de Movilidad #1 en LATAM
+            </div>
+            
+            <h1 class="hero-title">
+                MOVILIA<span class="logo-x">X</span> TALKS
+            </h1>
+            
+            <p class="hero-subtitle">
+                Conversaciones profundas con los visionarios que están construyendo el futuro 
+                de la movilidad. CEOs, innovadores y expertos comparten sus insights más valiosos.
+            </p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Oyentes Mensuales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Episodios Publicados</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Rating Promedio</span>
+                </div>
+            </div>
+
+            <div class="hero-cta-group">
+                <a href="#episodios" class="cta-button cta-primary">
+                    <span>🎧</span>
+                    Escuchar Episodios
+                </a>
+                <a href="#suscribirse" class="cta-button cta-secondary">
+                    <span>🔔</span>
+                    Suscribirse Gratis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="platforms fade-in">
+        <h3 class="platforms-title">Disponible en tus plataformas favoritas</h3>
+        <div class="platforms-grid">
+            <a href="#" class="platform-item">
+                <span class="platform-icon">🎵</span>
+                <span>Spotify</span>
+            </a>
+            <a href="#" class="platform-item">
+                <span class="platform-icon">🎧</span>
+                <span>Apple Podcasts</span>
+            </a>
+            <a href="#" class="platform-item">
+                <span class="platform-icon">📺</span>
+                <span>YouTube</span>
+            </a>
+            <a href="#" class="platform-item">
+                <span class="platform-icon">🔊</span>
+                <span>Google Podcasts</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Episode -->
+    <section class="episodes-section" id="episodios">
+        <div class="featured-episode fade-in">
+            <div>
+                <span class="featured-badge">
+                    ⭐ Episodio Destacado
+                </span>
+                <h2 class="featured-title">El Boom de los EVs en México</h2>
+                <p class="featured-guest">Con Ana Torres, Directora Tesla LATAM</p>
+                <p class="featured-description">
+                    En este episodio especial, exploramos el explosivo crecimiento del mercado de 
+                    vehículos eléctricos en México. Ana Torres comparte datos exclusivos sobre 
+                    las tendencias de adopción, desafíos de infraestructura, y la visión de Tesla 
+                    para convertir a México en el hub EV de América Latina.
+                </p>
+                <div class="featured-meta">
+                    <div class="meta-item">
+                        <span>📅</span>
+                        <span>25 Oct 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️</span>
+                        <span>45 minutos</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>🔖</span>
+                        <span>EVs</span>
+                    </div>
+                </div>
+                <div class="hero-cta-group" style="justify-content: flex-start;">
+                    <a href="#" class="cta-button cta-primary">
+                        <span>▶️</span>
+                        Escuchar Ahora
+                    </a>
+                    <a href="#" class="cta-button cta-secondary">
+                        <span>📝</span>
+                        Ver Transcripción
+                    </a>
+                </div>
+            </div>
+            <div class="featured-player">
+                <div class="player-icon">🎙️</div>
+                <div class="play-button">▶️</div>
+                <p style="color: var(--gris-metalico); font-size: 14px;">
+                    Haz clic para reproducir
+                </p>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Todos los Episodios</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="evs">EVs</button>
+                <button class="filter-btn" data-filter="smart-cities">Smart Cities</button>
+                <button class="filter-btn" data-filter="autonomos">Autónomos</button>
+                <button class="filter-btn" data-filter="logistica">Logística</button>
+                <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
+            </div>
+        </div>
+
+        <!-- Episodes Grid -->
+        <div class="episodes-grid">
+            <!-- Episode 1 -->
+            <article class="episode-card" data-category="evs">
+                <div class="episode-image">
+                    🚗
+                    <span class="episode-number">EP. 12</span>
+                    <span class="episode-duration">45 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">EVs</span>
+                    <h3 class="episode-title">El Boom de los EVs en México</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Ana Torres - Directora Tesla LATAM
+                    </p>
+                    <p class="episode-description">
+                        Exploramos el explosivo crecimiento del mercado de vehículos eléctricos 
+                        en México y la visión de Tesla para la región.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 2 -->
+            <article class="episode-card" data-category="autonomos">
+                <div class="episode-image">
+                    🤖
+                    <span class="episode-number">EP. 11</span>
+                    <span class="episode-duration">52 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Autónomos</span>
+                    <h3 class="episode-title">Ciudades Autónomas: El Futuro es Hoy</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Carlos Méndez - CTO Waymo
+                    </p>
+                    <p class="episode-description">
+                        Una conversación profunda sobre el estado actual de la conducción autónoma 
+                        y su implementación en ciudades latinoamericanas.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 3 -->
+            <article class="episode-card" data-category="smart-cities">
+                <div class="episode-image">
+                    🏙️
+                    <span class="episode-number">EP. 10</span>
+                    <span class="episode-duration">38 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Smart Cities</span>
+                    <h3 class="episode-title">Infraestructura Inteligente en Medellín</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Daniel Quintero - Alcalde de Medellín
+                    </p>
+                    <p class="episode-description">
+                        El Alcalde de Medellín comparte su visión sobre cómo transformar ciudades 
+                        mediante tecnología y movilidad sostenible.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 4 -->
+            <article class="episode-card" data-category="logistica">
+                <div class="episode-image">
+                    📦
+                    <span class="episode-number">EP. 9</span>
+                    <span class="episode-duration">41 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Logística</span>
+                    <h3 class="episode-title">Nearshoring y Logística Digital</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        María Fernández - CEO de LogTech México
+                    </p>
+                    <p class="episode-description">
+                        Cómo el nearshoring está transformando la logística en México y 
+                        creando oportunidades sin precedentes.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 5 -->
+            <article class="episode-card" data-category="infraestructura">
+                <div class="episode-image">
+                    ⚡
+                    <span class="episode-number">EP. 8</span>
+                    <span class="episode-duration">47 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Infraestructura</span>
+                    <h3 class="episode-title">La Red de Carga del Futuro</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Roberto Silva - Director de Energía CFE
+                    </p>
+                    <p class="episode-description">
+                        Exploramos los planes de infraestructura de carga para vehículos 
+                        eléctricos en México y los desafíos por superar.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 6 -->
+            <article class="episode-card" data-category="evs">
+                <div class="episode-image">
+                    🔋
+                    <span class="episode-number">EP. 7</span>
+                    <span class="episode-duration">43 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">EVs</span>
+                    <h3 class="episode-title">Baterías: La Próxima Revolución</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Laura Gómez - Científica en BatteryTech
+                    </p>
+                    <p class="episode-description">
+                        La tecnología de baterías está evolucionando rápidamente. 
+                        Descubre qué viene en los próximos 5 años.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 7 -->
+            <article class="episode-card" data-category="smart-cities">
+                <div class="episode-image">
+                    🚴
+                    <span class="episode-number">EP. 6</span>
+                    <span class="episode-duration">35 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Smart Cities</span>
+                    <h3 class="episode-title">Micromovilidad: Bicis y Scooters</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Andrés Morales - CEO Lime Latinoamérica
+                    </p>
+                    <p class="episode-description">
+                        El boom de la micromovilidad en ciudades latinoamericanas y 
+                        cómo está cambiando la forma en que nos desplazamos.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 8 -->
+            <article class="episode-card" data-category="logistica">
+                <div class="episode-image">
+                    🚚
+                    <span class="episode-number">EP. 5</span>
+                    <span class="episode-duration">50 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Logística</span>
+                    <h3 class="episode-title">Last Mile: El Desafío Final</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Patricia Rojas - VP Operaciones Amazon México
+                    </p>
+                    <p class="episode-description">
+                        Los retos y soluciones innovadoras para la entrega de última milla 
+                        en el e-commerce mexicano.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Episode 9 -->
+            <article class="episode-card" data-category="autonomos">
+                <div class="episode-image">
+                    🚕
+                    <span class="episode-number">EP. 4</span>
+                    <span class="episode-duration">44 min</span>
+                </div>
+                <div class="episode-content">
+                    <span class="episode-category">Autónomos</span>
+                    <h3 class="episode-title">Robotaxis en São Paulo</h3>
+                    <p class="episode-guest">
+                        <span>🎤</span>
+                        Bruno Santos - Director Uber ATG Brasil
+                    </p>
+                    <p class="episode-description">
+                        El proyecto piloto de taxis autónomos en São Paulo y las lecciones 
+                        aprendidas para otras ciudades de LATAM.
+                    </p>
+                    <div class="episode-actions">
+                        <a href="#" class="episode-btn episode-btn-primary">
+                            <span>▶️</span>
+                            Escuchar
+                        </a>
+                        <a href="#" class="episode-btn episode-btn-secondary">
+                            <span>📝</span>
+                            Notas
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section fade-in" id="suscribirse">
+        <div class="newsletter-icon">🔔</div>
+        <h2 class="newsletter-title">
+            No Te Pierdas Ningún Episodio
+        </h2>
+        <p class="newsletter-description">
+            Suscríbete a nuestra newsletter RADARX y recibe cada domingo los mejores 
+            insights sobre movilidad, además de acceso anticipado a nuevos episodios.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+            <input 
+                type="email" 
+                class="newsletter-input" 
+                placeholder="tu@email.com" 
+                required
+            >
+            <button type="submit" class="newsletter-button">
+                Suscribirse Gratis
+            </button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    MOVILIA<span class="logo-x">X</span>
+                </div>
+                <p class="footer-description">
+                    La plataforma líder de contenido sobre movilidad, vehículos eléctricos 
+                    y ciudades inteligentes en América Latina.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="Spotify">🎵</a>
+                    <a href="#" class="social-icon" aria-label="YouTube">📺</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">🐦</a>
+                    <a href="#" class="social-icon" aria-label="Instagram">📸</a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Podcast</h4>
+                <ul class="footer-links">
+                    <li><a href="#episodios">Todos los Episodios</a></li>
+                    <li><a href="#">Invitados</a></li>
+                    <li><a href="#">Temas</a></li>
+                    <li><a href="#">Transcripciones</a></li>
+                    <li><a href="#">Ser Invitado</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contenido</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/contenido.html">Artículos</a></li>
+                    <li><a href="/#newsletter">Newsletter RADARX</a></li>
+                    <li><a href="#">Reportes</a></li>
+                    <li><a href="#">Datos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Empresa</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Equipo</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 MOVILIAX. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        ↑
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to top
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const episodeCards = document.querySelectorAll('.episode-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                episodeCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Newsletter form
+        const newsletterForm = document.getElementById('newsletterForm');
+        const toast = document.getElementById('toast');
+
+        function showToast(message) {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            
+            // Simulate subscription
+            showToast('¡Gracias por suscribirte! 🎉');
+            e.target.reset();
+            
+            // Track event
+            console.log('Newsletter subscription:', email);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Fade in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(element);
+        });
+
+        // Console Easter Egg
+        console.log('%c🎙️ MOVILIAX TALKS', 'font-size: 40px; color: #00E0FF; font-weight: bold;');
+        console.log('%c¿Te gustaría ser invitado al podcast?', 'font-size: 16px; color: #7A7F8C;');
+        console.log('%cEnvía tu propuesta a: podcast@moviliax.com', 'font-size: 14px; color: #00E0FF;');
+    </script>
+</body>
+</html>
