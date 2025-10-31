@@ -14,7 +14,7 @@
 
   <!-- Acerca de -->
   <url>
-    <loc>https://moviliax.com/acerca-de.html</loc>
+    <loc>https://hlomelin.github.io/moviliaxweb/acerca-de</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- MOVILIAX Connect -->
   <url>
-    <loc>https://moviliax.com/moviliax-connect.html</loc>
+    <loc>https://hlomelin.github.io/moviliaxweb/moviliax-connect</loc>
     <lastmod>2025-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
