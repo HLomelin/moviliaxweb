@@ -69,4 +69,4 @@ Options -Indexes
 # Protect sensitive files
 <FilesMatch "\.(env|git|htaccess|htpasswd)$">
     Require all denied
-</FilesMatch
+</FilesMatch>
