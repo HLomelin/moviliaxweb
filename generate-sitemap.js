@@ -16,7 +16,7 @@ const path = require('path');
 // ==================== CONFIGURACIÓN ====================
 
 const CONFIG = {
-  domain: 'https://moviliax.com',
+  domain: 'https://hlomelin.io/moviliaxweb/,
   baseDir: './',
   outputFile: 'sitemap.xml',
   excludeDirs: ['node_modules', 'dist', 'build', '.git', 'css', 'js', 'assets'],
